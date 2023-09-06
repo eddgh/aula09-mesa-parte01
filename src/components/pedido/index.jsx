@@ -4,18 +4,18 @@ import {useState} from 'react';
 
 export default function Pedido ({item}) {
     
-    const [exibirPedido, setExibirPedido] = useState (true)
+    const [showOrder, setShowOrder] = useState (true)
 
-    const handlerExibirPedido = () => {
+    const handlerOrderCancel = () => {
         alert('Seu pedido foi cancelado.')
-        document.getElementById('cancela').disabled = true;
-        setExibirPedido(false);
+        document.getElementById('orderCancel').disabled = true;
+        setShowOrder(false);
     }
 
 return (
     <>
-    {exibirPedido && <h1>Seu pedido: {item}</h1>}    
-    <button id="cancela" onClick = {() => handlerExibirPedido()}>Cancelar pedido</button>
+    {showOrder && <h1>Seu pedido: {item}</h1>}    
+    <button id="orderCancel" onClick = {() => handlerOrderCancel()}>Cancelar pedido</button>
     </>
 )
 }

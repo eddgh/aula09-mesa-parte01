@@ -8,14 +8,14 @@ function App() {
   const [item, setItem] = useState('');
 
   useEffect(() => {
-    document.getElementById('cancela').disabled = true;
+    document.getElementById('orderCancel').disabled = true;
     
     setTimeout(() => {
       setItem('Pizzas');
       console.log("O componente foi atualizado!")
     }, "2000");
 
-    !item ? "" : document.getElementById('cancela').disabled = false;
+    !item ? "" : document.getElementById('orderCancel').disabled = false;
 
 
   },[item])
