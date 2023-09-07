@@ -6,10 +6,8 @@ export default function Pedido() {
     const [item, setItem] = useState('');
 
     useEffect(() => {
-        document.getElementById('orderCancel').disabled = true;
         setTimeout(() => {
             setItem('Pizzas');
-            document.getElementById('orderCancel').disabled = false;
             console.log("O componente foi atualizado!")
         }, "2000")
 
