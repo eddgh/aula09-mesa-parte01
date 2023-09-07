@@ -4,23 +4,20 @@ import { useState, useEffect } from 'react';
 
 export default function Pedido() {
     const [item, setItem] = useState('');
-    const cancelaPedido = () => {
-        alert('Seu pedido foi cancelado.')
-    }
-
-    // const [showOrder, setShowOrder] = useState(true)
 
     useEffect(() => {
+        document.getElementById('orderCancel').disabled = true;
         setTimeout(() => {
             setItem('Pizzas');
+            document.getElementById('orderCancel').disabled = false;
             console.log("O componente foi atualizado!")
         }, "2000")
 
         return (() => {
-            cancelaPedido();
+            alert('Seu pedido foi cancelado.')
         })
 
-    }, [])
+    }, [item])
 
 
     return (
