@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import Pedido from './components/pedido'
 import { useState, useEffect } from 'react'
@@ -5,24 +6,19 @@ import './App.css'
 
 
 function App() {
-  const [item, setItem] = useState('');
+  const [showOrder, setShowOrder] = useState(true)
 
-  useEffect(() => {
-    document.getElementById('orderCancel').disabled = true;
-    
-    setTimeout(() => {
-      setItem('Pizzas');
-      console.log("O componente foi atualizado!")
-    }, "2000");
-
-    !item ? "" : document.getElementById('orderCancel').disabled = false;
-
-
-  },[item])
+  const handlerOrderCancel = () => {
+    setShowOrder(false);
+  }
 
   return (
     <main>
-    {<Pedido item={item} />}      
+      {showOrder && <Pedido />}
+
+      <button
+        onClick={() => handlerOrderCancel()}>Cancelar pedido
+      </button>
     </main>
   )
 
