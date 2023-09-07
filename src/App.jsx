@@ -17,7 +17,6 @@ function App() {
       {showOrder && <Pedido />}
 
       <button
-        id="orderCancel"
         onClick={() => handlerOrderCancel()}>Cancelar pedido
       </button>
     </main>

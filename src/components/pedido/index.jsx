@@ -15,7 +15,7 @@ export default function Pedido() {
             alert('Seu pedido foi cancelado.')
         })
 
-    }, [item])
+    }, [])
 
 
     return (
